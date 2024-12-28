@@ -1,0 +1,113 @@
+/* Celebration Animation */
+.celebration-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .celebration-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 223, 0, 0.6);
+    border-radius: 50%;
+    animation: pop 1.5s ease-out infinite;
+  }
+  
+  .celebration-circle.small {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 105, 180, 0.6);
+    animation: pop-small 1.5s ease-out infinite;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pop-small {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  /* Game Board Styles */
+  .game-board {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #444;
+  }
+  
+  .game-area {
+    margin-top: 20px;
+  }
+  
+  .color-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .color-block {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+  }
+  
+  .color-block:hover {
+    transform: scale(1.1);
+  }
+  
+  .start-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .low-time {
+    color: red;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
