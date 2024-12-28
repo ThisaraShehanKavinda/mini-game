@@ -55,6 +55,7 @@
     margin: 0 auto;
     padding: 16px;
     text-align: center;
+    position: relative;
   }
   
   .header h1 {
@@ -77,10 +78,17 @@
     padding-top: 100%;
     border-radius: 12px;
     transition: transform 0.2s ease;
+    border: 3px solid transparent;
   }
   
   .color-block:hover {
     transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .color-block:active {
+    transform: scale(1);
+    box-shadow: none;
   }
   
   .start-button {
@@ -90,11 +98,12 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .start-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
   }
   
   .low-time {
@@ -108,6 +117,56 @@
     }
     50% {
       opacity: 0.5;
+    }
+  }
+  
+  /* Game Over Styles */
+  .game-over {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .game-over h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .game-over p {
+    font-size: 1.2rem;
+  }
+  
+  /* Alert Styles */
+  .alert {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .alert-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .alert-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Header */
+  header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .color-options {
+      grid-template-columns: 1fr;
     }
   }
   
