@@ -1,8 +1,8 @@
+import { AlertCircle, Timer, Trophy } from 'lucide-react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Alert, AlertDescription, AlertTitle } from './Alert';
 
-import { AlertCircle, Timer, Trophy } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
-import Confetti from 'react-confetti';
+const Confetti = lazy(() => import('react-confetti'));
 
 const GameBoard = () => {
   const [score, setScore] = useState(0);
@@ -75,7 +75,9 @@ const GameBoard = () => {
 
   return (
     <div className="game-board">
-      {gameOver && <Confetti />}
+      <Suspense fallback={<div>Loading...</div>}>
+        {gameOver && <Confetti />}
+      </Suspense>
       <div className="header">
         <h1>Color Match</h1>
         <p>Match the color name with the correct block!</p>
